@@ -654,3 +654,16 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
+
+add_action( 'wp_enqueue_scripts', function() {
+    if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
+        wp_enqueue_script( 'browser-sync-client', 'http://localhost:3000/browser-sync/browser-sync-client.js', array(), '20210325', true );
+    }
+} );
+
+function add_browsersync() {
+    if ( !is_admin() ) {
+        wp_enqueue_script( 'browser-sync', 'http://localhost:3000/browser-sync-client.js', array(), null, true );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'add_browsersync' );

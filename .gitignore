@@ -29,3 +29,5 @@ wp-content/themes/*/cache/
 # Ignore configuration files with sensitive data
 wp-config.php
 wp-config-sample.php
+
+node_modules/
