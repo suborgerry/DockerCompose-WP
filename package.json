@@ -2,7 +2,6 @@
   "name": "docker-wp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "browser-sync start --config bs-config.js --no-ui --no-online & docker-compose up",
     "test": "echo \"Error: no test specified\" && exit 1"
